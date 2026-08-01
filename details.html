@@ -5,181 +5,237 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUK Connect - Project Details</title>
     <style>
-        /* Modern 2026 CSS Reset & Variables */
+        /* Modern 2026 Glassmorphic Stylesheet */
         :root {
-            --primary-color: #0056b3;
-            --text-color: #333333;
-            --background-light: #f8f9fa;
-            --white: #ffffff;
-            --border-radius: 12px;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --sky-blue: #38bdf8;
+            --deep-blue: #0284c7;
+            --dark-bg: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #e2e8f0;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --radius: 16px;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--background-light);
-            color: var(--text-color);
+            /* Vibrant Blue to Sky Blue Mesh Gradient Background */
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--deep-blue) 50%, var(--sky-blue) 100%);
+            background-attachment: fixed;
+            color: var(--text-main);
             line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Glassmorphism Utility Class */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
         }
 
         /* Navigation */
         nav {
-            background-color: var(--primary-color);
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 2rem;
+            border-radius: 0 0 var(--radius) var(--radius);
+            border-top: none;
         }
 
         .logo {
-            color: var(--white);
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        nav a {
-            color: var(--white);
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            margin-left: 1.5rem;
-            transition: opacity 0.2s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
         }
 
-        nav a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Layout Containers */
+        /* Layout Grid */
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem 2rem 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            align-items: start;
         }
 
         /* Typography */
         h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
         h2 {
             font-size: 1.5rem;
             margin: 2rem 0 1rem 0;
-            color: var(--primary-color);
+            color: var(--sky-blue);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
         }
 
         p {
             margin-bottom: 1rem;
+            color: var(--text-main);
             font-size: 1.05rem;
         }
 
         ul {
             margin-left: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         li {
             margin-bottom: 0.5rem;
         }
 
-        /* Diagram Placeholders */
+        .content-card {
+            padding: 2rem;
+        }
+
+        /* Glass Bound Diagram Placeholders */
         .diagram-placeholder {
             width: 100%;
-            background-color: #e2e8f0;
-            border: 2px dashed #94a3b8;
-            border-radius: var(--border-radius);
+            height: 250px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #475569;
-            margin-bottom: 2rem;
             text-align: center;
-            padding: 1rem;
-            height: 250px;
+            margin: 1.5rem 0 2.5rem 0;
+            color: #ffffff;
+            /* Extra glass styling for the boundary */
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(56, 189, 248, 0.5);
         }
 
         .placeholder-text {
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            color: var(--sky-blue);
             margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
+        /* Right Sidebar Menu */
+        .sidebar {
+            padding: 1.5rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar h3 {
+            color: var(--sky-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: padding-left 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            padding-left: 10px;
+            color: var(--sky-blue);
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none; /* Hide quick links on mobile to save space */
+            }
             nav {
                 flex-direction: column;
-                text-align: center;
                 gap: 1rem;
-            }
-            nav a {
-                margin: 0 0.5rem;
-            }
-            .card {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Header -->
-    <nav>
-        <div class="logo">MUK Connect</div>
-        <div>
+    <!-- Glass Navigation -->
+    <nav class="glass-panel">
+        <a href="index.html" class="logo">MUK Connect</a>
+        <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="details.html">Project Details</a>
         </div>
     </nav>
 
+    <!-- Main Grid Container -->
     <div class="container">
-        <section class="card">
+        
+        <!-- Left Side: Main Content -->
+        <main class="glass-panel content-card">
             <h1>Project Details & Explanation</h1>
             
-            <h2>1. The Problem</h2>
+            <h2 id="problem">1. The Problem</h2>
             <p>Information about these clubs and their activities is scattered across notice boards, social media platforms, and messaging groups, making it difficult for many students, especially new students, to discover available opportunities[cite: 1]. In addition, students often struggle to balance their academic responsibilities with extracurricular activities because they lack a simple way to organize their schedules and identify activities that fit into their available time[cite: 1].</p>
 
-            <!-- Diagram 1 -->
-            <div class="diagram-placeholder">
+            <div class="glass-panel diagram-placeholder">
                 <div class="placeholder-text">[ Visual Diagram 1 ]</div>
-                <small>Insert Problem Architecture or System Context Diagram Here[cite: 2]</small>
+                <small>Insert Problem Architecture Here[cite: 2]</small>
             </div>
 
-            <h2>2. Target Audience</h2>
+            <h2 id="audience">2. Target Audience</h2>
             <p>It includes Makerere University students, who will use the platform to discover clubs and manage their schedules, and club administrators, who will manage club information, events, and membership applications[cite: 1].</p>
             <ul>
                 <li><strong>Student Users:</strong> These are regular university students[cite: 2]. They want to find clubs, see events, and manage their time[cite: 2].</li>
                 <li><strong>Club Administrator Users:</strong> These are leaders of student clubs[cite: 2]. They manage club information, create events, and approve students who want to join[cite: 2].</li>
             </ul>
 
-            <!-- Diagram 2 -->
-            <div class="diagram-placeholder">
+            <div class="glass-panel diagram-placeholder">
                 <div class="placeholder-text">[ Visual Diagram 2 ]</div>
-                <small>Insert User Roles and Audience Flowchart Here</small>
+                <small>Insert User Roles Flowchart Here</small>
             </div>
 
-            <h2>3. Methodology & Operating Environment</h2>
+            <h2 id="methodology">3. Methodology & Operating Environment</h2>
             <p>Involves developing the application using Flutter for cross-platform mobile development and Firebase for user authentication, cloud database management, and real-time notifications[cite: 1].</p>
             <p>The MUK Connect app will run on:</p>
             <ul>
@@ -188,36 +244,44 @@
                 <li>Mobile phones with internet connection (WiFi or mobile data)[cite: 2].</li>
             </ul>
 
-            <!-- Diagram 3 -->
-            <div class="diagram-placeholder">
+            <div class="glass-panel diagram-placeholder">
                 <div class="placeholder-text">[ Visual Diagram 3 ]</div>
-                <small>Insert Technology Stack Overview (Flutter & Firebase) Here</small>
+                <small>Insert Technology Stack Overview Here</small>
             </div>
 
-            <h2>4. Key Functionalities</h2>
+            <h2 id="features">4. Key Functionalities</h2>
             <p>MUK Connect allows students and club leaders to do these main activities[cite: 2]:</p>
             <ul>
                 <li><strong>Account Management:</strong> Create an account, log in, and manage profile information[cite: 2].</li>
-                <li><strong>Browse & Join Clubs:</strong> See a list of all clubs, search for clubs, and view club details[cite: 2]. Request to join a club and see approval status[cite: 2].</li>
-                <li><strong>Events & Schedules:</strong> See all club events with dates, times, and locations[cite: 2]. Create a personal study schedule and get reminders[cite: 2].</li>
+                <li><strong>Browse & Join Clubs:</strong> See a list of all clubs, search for clubs, and view club details[cite: 2].</li>
+                <li><strong>Events & Schedules:</strong> See all club events[cite: 2]. Create a personal study schedule and get reminders[cite: 2].</li>
             </ul>
 
-            <!-- Diagram 4 -->
-            <div class="diagram-placeholder">
+            <div class="glass-panel diagram-placeholder">
                 <div class="placeholder-text">[ Visual Diagram 4 ]</div>
-                <small>Insert Use Case Diagram showing student and admin activities Here[cite: 2]</small>
+                <small>Insert Use Case Diagram Here[cite: 2]</small>
             </div>
 
-            <h2>5. Expected Benefits</h2>
+            <h2 id="benefits">5. Expected Benefits</h2>
             <p>Improving access to club information, enhancing students' time management, increasing participation in campus activities, reducing scheduling conflicts, strengthening communication between students and clubs, and creating a more connected and active university community[cite: 1].</p>
 
-            <!-- Diagram 5 -->
-            <div class="diagram-placeholder">
+            <div class="glass-panel diagram-placeholder">
                 <div class="placeholder-text">[ Visual Diagram 5 ]</div>
                 <small>Insert User Interface (UI) Screen Flow Here</small>
             </div>
             
-        </section>
+        </main>
+
+        <!-- Right Side: Sticky Quick Links Navigation -->
+        <aside class="glass-panel sidebar">
+            <h3>Page Navigation</h3>
+            <a href="#problem">1. The Problem</a>
+            <a href="#audience">2. Target Audience</a>
+            <a href="#methodology">3. Methodology</a>
+            <a href="#features">4. Key Functionalities</a>
+            <a href="#benefits">5. Expected Benefits</a>
+        </aside>
+
     </div>
 
 </body>
