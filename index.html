@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUK Connect - Updated Design</title>
+    <title>MUK Connect - Home</title>
     <style>
-        /* Updated Variables */
         :root {
-            --cream-bg: #fcf9f3; /* Plain cream background */
-            --gold-dark-green: #78e5d6; /* Gold dark green for headings */
-            --text-dark: #1A1A1A; /* Dark text for all regular content */
-            --glass-bg: rgba(255, 255, 255, 0.5); /* Frosted white glass for cream bg */
-            --glass-border: rgba(255, 255, 255, 0.8);
+            --bg-color: #f4faf6; 
+            --primary-green: #38a169; 
+            --dark-heading: #0f291e; 
+            --text-gray: #555b57; 
+            --light-pill-bg: #e8f2eb; 
+            --light-pill-border: #d1e3d6;
             --radius: 16px;
         }
 
@@ -19,45 +19,38 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background: var(--cream-bg);
-            color: var(--text-dark);
+            background-color: var(--bg-color);
+            color: var(--text-gray);
             line-height: 1.6;
             min-height: 100vh;
         }
 
-        /* Glassmorphism Utility Class for Nav and Headers */
-        .glass-element {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius);
-            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05); /* Soft shadow to stand out on cream */
-        }
-
-        /* Navigation */
+        /* --- Navigation --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            margin-bottom: 2rem;
-            border-radius: 0 0 var(--radius) var(--radius);
-            border-top: none;
+            background-color: var(--bg-color);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--gold-dark-green);
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--dark-heading);
             text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary-green);
         }
 
         .nav-links {
@@ -65,115 +58,122 @@
             gap: 1rem;
         }
 
-        /* Glassmorphism on Nav Links */
+        /* Pill Navigation Links */
         .nav-links a {
-            color: var(--text-dark);
+            color: var(--dark-heading);
             text-decoration: none;
-            font-weight: 600;
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
             transition: all 0.3s ease;
-            
-            /* Glass effect */
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            background: var(--light-pill-bg);
+            border: 1px solid var(--light-pill-border);
         }
 
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.8);
-            color: var(--gold-dark-green);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        /* Hover & Focus state (Turns green when clicked/focused) */
+        .nav-links a:hover,
+        .nav-links a:focus {
+            background: var(--primary-green);
+            color: #ffffff;
+            border-color: var(--primary-green);
+            outline: none;
         }
 
-        /* Layout Grid */
+        /* --- Layout Grid --- */
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 1.5rem 2rem 1.5rem;
+            padding: 0 1.5rem 4rem 1.5rem;
             display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 2rem;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
             align-items: start;
         }
 
-        /* Typography & Header Glassmorphism */
-        h1, h2, h3 {
-            color: var(--gold-dark-green);
-            padding: 1rem 1.5rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
+        /* --- Typography --- */
         h1 {
-            font-size: 2.2rem;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--dark-heading);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
         }
 
         h2 {
-            font-size: 1.5rem;
-            margin-top: 1.5rem;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 3rem 0 1rem 0;
+            color: var(--dark-heading);
+            letter-spacing: -0.5px;
         }
-        
+
         h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            color: var(--dark-heading);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         p {
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            font-size: 1.05rem;
-            padding: 0 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 1.15rem;
+            line-height: 1.7;
         }
 
-        /* Non-Glass Main Content Areas */
         .content-card {
             padding: 0;
-            background: transparent;
         }
 
-        /* Plain Picture Placeholder */
+        /* --- Image Placeholder --- */
         .image-placeholder {
-            width: calc(100% - 3rem);
+            width: 100%;
             height: 350px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin: 2rem 1.5rem;
-            background: rgba(0, 0, 0, 0.03);
-            border: 2px dashed var(--gold-dark-green);
-            border-radius: var(--radius);
-            color: var(--text-dark);
+            margin: 2rem 0;
+            background: #ffffff;
+            border: 2px dashed var(--light-pill-border);
+            border-radius: 20px;
+            color: var(--text-gray);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .placeholder-text {
-            font-weight: bold;
+            font-weight: 800;
             font-size: 1.25rem;
-            color: var(--gold-dark-green);
+            color: var(--primary-green);
             margin-bottom: 0.5rem;
         }
 
-        /* Right Top Sidebar (Contributors) */
+        /* --- Sidebar (Contributors) --- */
         .sidebar {
-            padding: 0;
-            background: transparent;
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 100px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
         .contributors-list {
             list-style: none;
-            margin: 0 1.5rem;
             padding: 0;
         }
 
         .contributors-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             font-size: 0.95rem;
-            color: var(--text-dark);
+            color: var(--text-gray);
         }
 
         .contributors-list li:last-child {
@@ -183,8 +183,9 @@
         .contributor-name {
             display: block;
             font-weight: 700;
-            color: var(--gold-dark-green);
+            color: var(--dark-heading);
             font-size: 1.05rem;
+            margin-bottom: 0.2rem;
         }
 
         /* Mobile Responsive adjustments */
@@ -193,21 +194,24 @@
                 grid-template-columns: 1fr;
             }
             .sidebar {
-                grid-row: 2;
+                position: static;
                 margin-top: 2rem;
             }
             nav {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
+            }
+            h1 {
+                font-size: 2.3rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Glass Navigation -->
-    <nav class="glass-element">
-        <a href="index.html" class="logo">MUK Connect</a>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">MUK <span>Connect</span></a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="details.html">Project Details</a>
@@ -219,26 +223,23 @@
         
         <!-- Left Side: Main Content -->
         <main class="content-card">
-            <!-- Glassmorphic Header -->
-            <h1 class="glass-element">Welcome to MUK Connect</h1>
+            <h1>Welcome to MUK Connect</h1>
             
-            <!-- Plain Boundary Project Picture Placeholder -->
+            <!-- Project Picture Placeholder -->
             <div class="image-placeholder">
                 <div class="placeholder-text">[ Insert Project Picture Here ]</div>
                 <small>Replace this box with your application screenshot</small>
             </div>
 
-            <!-- Glassmorphic Header -->
-            <h2 class="glass-element">Project Summary</h2>
+            <h2>Project Summary</h2>
             <p>Makerere University has a wide range of student clubs and organizations that promote leadership, networking, learning, and personal development. The proposed solution is the development of MUK Connect, a smart mobile application that centralizes information about officially recognized student clubs while helping students plan their daily activities.</p>
             
             <p>The application will allow users to browse clubs, apply for membership, register for events, create personal schedules, and receive personalized recommendations for club events and campus activities that fit into their free time without causing scheduling conflicts.</p>
         </main>
 
-        <!-- Right Side (Top): Contributors List -->
+        <!-- Right Side: Contributors List -->
         <aside class="sidebar">
-            <!-- Glassmorphic Header -->
-            <h3 class="glass-element">Project Contributors (Group 3)</h3>
+            <h3>Project Contributors (Group 3)</h3>
             <ul class="contributors-list">
                 <li>
                     <span class="contributor-name">Ahereza Albert</span>
