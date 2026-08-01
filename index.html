@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUK Connect - Glassmorphism</title>
+    <title>MUK Connect - Updated Design</title>
     <style>
-        /* Modern 2026 Glassmorphic Stylesheet */
+        /* Updated Variables */
         :root {
-            --cream-white: #f8fbf7;
-            --dark-green: #104726;
-            --accent-green: #16a34a;
-            --text-main: #1e293b;
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            --glass-border: rgba(20, 83, 45, 0.15);
+            --cream-bg: #FDF5E6; /* Plain cream background */
+            --gold-dark-green: #3B5323; /* Gold dark green for headings */
+            --text-dark: #1A1A1A; /* Dark text for all regular content */
+            --glass-bg: rgba(255, 255, 255, 0.5); /* Frosted white glass for cream bg */
+            --glass-border: rgba(255, 255, 255, 0.8);
             --radius: 16px;
         }
 
@@ -24,22 +23,20 @@
         }
 
         body {
-            /* Vibrant Blue to Sky Blue Mesh Gradient Background */
-            background: linear-gradient(135deg, #f7f4ed 0%, #fdfbf7 50%, #f4f1ea 100%);
-            background-attachment: fixed;
-            color: var(--text-main);
+            background: var(--cream-bg);
+            color: var(--text-dark);
             line-height: 1.6;
             min-height: 100vh;
         }
 
-        /* Glassmorphism Utility Class */
-        .glass-panel {
+        /* Glassmorphism Utility Class for Nav and Headers */
+        .glass-element {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--radius);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05); /* Soft shadow to stand out on cream */
         }
 
         /* Navigation */
@@ -58,31 +55,40 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
+            font-weight: 800;
+            color: var(--gold-dark-green);
             text-decoration: none;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
+        /* Glassmorphism on Nav Links */
         .nav-links a {
-            color: #0c5f2b;
+            color: var(--text-dark);
             text-decoration: none;
             font-weight: 600;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 8px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            
+            /* Glass effect */
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
         }
 
         .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--gold-dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
-        /* Layout Grid for Top-Right Contributors */
+        /* Layout Grid */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -93,78 +99,81 @@
             align-items: start;
         }
 
-        /* Typography */
+        /* Typography & Header Glassmorphism */
+        h1, h2, h3 {
+            color: var(--gold-dark-green);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #0c5f2b;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            font-size: 2.2rem;
         }
 
         h2 {
             font-size: 1.5rem;
-            margin: 1.5rem 0 1rem 0;
-            color: var(--sky-blue);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            margin-top: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         p {
             margin-bottom: 1rem;
-            color: var(--text-main);
+            color: var(--text-dark);
             font-size: 1.05rem;
+            padding: 0 1.5rem;
         }
 
+        /* Non-Glass Main Content Areas */
         .content-card {
-            padding: 2rem;
+            padding: 0;
+            background: transparent;
         }
 
-        /* Glass Bound Picture Placeholders */
+        /* Plain Picture Placeholder */
         .image-placeholder {
-            width: 100%;
-            height: auto;
+            width: calc(100% - 3rem);
+            height: 350px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin: 2rem 0;
-            color: #ffffff;
-            /* Extra glass styling for the image boundary */
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(56, 189, 248, 0.5); /* Sky blue tinted border */
+            margin: 2rem 1.5rem;
+            background: rgba(0, 0, 0, 0.03);
+            border: 2px dashed var(--gold-dark-green);
+            border-radius: var(--radius);
+            color: var(--text-dark);
         }
 
         .placeholder-text {
             font-weight: bold;
             font-size: 1.25rem;
-            color: var(--sky-blue);
+            color: var(--gold-dark-green);
             margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
 
         /* Right Top Sidebar (Contributors) */
         .sidebar {
-            padding: 1.5rem;
-        }
-
-        .sidebar h3 {
-            color: var(--sky-blue);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 0.5rem;
+            padding: 0;
+            background: transparent;
         }
 
         .contributors-list {
             list-style: none;
-            margin: 0;
+            margin: 0 1.5rem;
             padding: 0;
         }
 
         .contributors-list li {
             padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            font-size: 0.95rem;
+            color: var(--text-dark);
         }
 
         .contributors-list li:last-child {
@@ -173,9 +182,9 @@
 
         .contributor-name {
             display: block;
-            font-weight: bold;
-            color: #ffffff;
-            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gold-dark-green);
+            font-size: 1.05rem;
         }
 
         /* Mobile Responsive adjustments */
@@ -183,9 +192,9 @@
             .container {
                 grid-template-columns: 1fr;
             }
-            /* Move contributors below the main intro on mobile */
             .sidebar {
                 grid-row: 2;
+                margin-top: 2rem;
             }
             nav {
                 flex-direction: column;
@@ -197,7 +206,7 @@
 <body>
 
     <!-- Glass Navigation -->
-    <nav class="glass-panel">
+    <nav class="glass-element">
         <a href="index.html" class="logo">MUK Connect</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
@@ -209,42 +218,48 @@
     <div class="container">
         
         <!-- Left Side: Main Content -->
-        <main class="glass-panel content-card">
-            <h1>Welcome to MUK Connect</h1>
+        <main class="content-card">
+            <!-- Glassmorphic Header -->
+            <h1 class="glass-element">Welcome to MUK Connect</h1>
             
-            <!-- Glass Boundary Project Picture Placeholder -->
-            <div class="glass-panel image-placeholder">
+            <!-- Plain Boundary Project Picture Placeholder -->
+            <div class="image-placeholder">
                 <div class="placeholder-text">[ Insert Project Picture Here ]</div>
                 <small>Replace this box with your application screenshot</small>
             </div>
 
-            <h2>Project Summary</h2>
-            <p>Makerere University has a wide range of student clubs and organizations that promote leadership, networking, learning, and personal development[cite: 1]. The proposed solution is the development of MUK Connect, a smart mobile application that centralizes information about officially recognized student clubs while helping students plan their daily activities[cite: 1].</p>
+            <!-- Glassmorphic Header -->
+            <h2 class="glass-element">Project Summary</h2>
+            <p>Makerere University has a wide range of student clubs and organizations that promote leadership, networking, learning, and personal development. The proposed solution is the development of MUK Connect, a smart mobile application that centralizes information about officially recognized student clubs while helping students plan their daily activities.</p>
             
-            <p>The application will allow users to browse clubs, apply for membership, register for events, create personal schedules, and receive personalized recommendations for club events and campus activities that fit into their free time without causing scheduling conflicts[cite: 1].</p>
+            <p>The application will allow users to browse clubs, apply for membership, register for events, create personal schedules, and receive personalized recommendations for club events and campus activities that fit into their free time without causing scheduling conflicts.</p>
         </main>
 
         <!-- Right Side (Top): Contributors List -->
-        <aside class="glass-panel sidebar">
-            <h3>Project Contributors (Group 3)</h3>
+        <aside class="sidebar">
+            <!-- Glassmorphic Header -->
+            <h3 class="glass-element">Project Contributors (Group 3)</h3>
             <ul class="contributors-list">
                 <li>
                     <span class="contributor-name">Ahereza Albert</span>
-                    Reg No: 25/U/24153<br>Std No: 2500724153
+                    Reg: 25/U/24153<br>Std No: 2500724153
                 </li>
                 <li>
                     <span class="contributor-name">Akurutu Patience</span>
-                    Reg No: 25/U/03320/EVE<br>Std No: 2500703320
+                    Reg: 25/U/03320/EVE<br>Std No: 2500703320
                 </li>
                 <li>
                     <span class="contributor-name">Mutebi Steven</span>
-                    Reg No: 25/U/03479/PSA<br>Std No: 2500703479
+                    Reg: 25/U/03479/PSA<br>Std No: 2500703479
                 </li>
                 <li>
                     <span class="contributor-name">Peter Emmanuel Ngobi</span>
-                    Reg No: 25/U/15563/PS<br>Std No: 2500715563
+                    Reg: 25/U/15563/PS<br>Std No: 2500715563
                 </li>
-                
+                <li>
+                    <span class="contributor-name">[Contributor 5 Name]</span>
+                    Reg: [Number]<br>Std No: [Number]
+                </li>
             </ul>
         </aside>
 
