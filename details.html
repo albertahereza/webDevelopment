@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUK Connect - Project Details</title>
     <style>
-        /* Updated Modern 2026 Stylesheet - Plain Cream Design with Selective Glassmorphism */
         :root {
-            --cream-bg: #fff8e1; /* Plain cream background */
-            --gold-dark-green: #006400; /* Gold dark green for headings */
-            --text-dark: #333; /* Dark color for all regular text */
-            
-            /* Glassmorphism Styles (white/frosted) */
-            --glass-bg: rgba(255, 255, 255, 0.5); /* Frosted white glass on cream bg */
+            --cream-bg: #fff8e1;
+            --gold-dark-green: #006400; 
+            --text-dark: #333; 
+            --glass-bg: rgba(255, 255, 255, 0.5); 
             --glass-border: rgba(255, 255, 255, 0.8);
             --radius: 16px;
         }
@@ -25,25 +22,22 @@
         }
 
         body {
-            /* Plain cream background */
             background-color: var(--cream-bg);
             background-attachment: fixed;
-            color: var(--text-dark); /* All text is dark */
+            color: var(--text-dark);
             line-height: 1.6;
             min-height: 100vh;
         }
 
-        /* Utility Class for selective glassmorphism on cream background */
         .glass-element {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: var(--radius);
-            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.05); /* Softer shadow on light background */
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.05); 
         }
 
-        /* Navigation - Plain Cream Bar */
         nav {
             display: flex;
             justify-content: space-between;
@@ -55,8 +49,6 @@
             margin-bottom: 2rem;
             border-radius: 0 0 var(--radius) var(--radius);
             border-top: none;
-            
-            /* Add this to make nav a glass panel */
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -66,7 +58,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--gold-dark-green); /* Green Logo */
+            color: var(--gold-dark-green);
             text-decoration: none;
         }
 
@@ -75,7 +67,6 @@
             gap: 1rem;
         }
 
-        /* Glassmorphism on Nav Links - they look like glass buttons */
         .nav-links a {
             color: var(--text-dark);
             text-decoration: none;
@@ -83,8 +74,6 @@
             padding: 0.5rem 1.2rem;
             border-radius: 8px;
             transition: all 0.3s ease;
-            
-            /* Simple glass background on cream */
             background: rgba(255, 255, 255, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
@@ -95,7 +84,14 @@
             color: var(--gold-dark-green);
         }
 
-        /* Layout Grid */
+        /* ---> NAV LINK FOCUS STATE: Turns green when clicked <--- */
+        .nav-links a:focus {
+            border-color: var(--gold-dark-green);
+            color: var(--gold-dark-green);
+            background: rgba(255, 255, 255, 0.9);
+            outline: none; 
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -106,13 +102,12 @@
             align-items: start;
         }
 
-        /* Typography - Dark Green Headings */
         h1 {
             font-size: 2.2rem;
             color: var(--gold-dark-green);
             display: block;
             margin-bottom: 1.5rem;
-            padding: 1rem 1.5rem; /* Add padding for glass effect to show */
+            padding: 1rem 1.5rem; 
         }
 
         h2 {
@@ -122,10 +117,9 @@
             border-bottom: 2px solid rgba(0,100,0,0.1);
             padding-bottom: 0.5rem;
             display: block;
-            padding: 0.75rem 1.25rem; /* Padding for glass */
+            padding: 0.75rem 1.25rem;
         }
 
-        /* Apply glass class to h1 and h2 */
         h1, h2, h3 {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -137,9 +131,9 @@
 
         p {
             margin-bottom: 1rem;
-            color: var(--text-dark); /* Dark text */
+            color: var(--text-dark);
             font-size: 1.05rem;
-            padding: 0 1.5rem; /* Match headings' padding */
+            padding: 0 1.5rem;
         }
 
         ul {
@@ -152,36 +146,31 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Non-glass main content panel */
         .content-card {
             padding: 0;
-            background: transparent; /* Main content blends into cream bg */
+            background: transparent;
         }
 
-        /* --- Reshaped Mobile Phone Frame Placeholders --- */
         .phone-frame {
             position: relative;
-            width: 220px; /* Portrait width */
-            height: 391px; /* Correct aspect ratio 16:9 for 220 width */
-            margin: 2.5rem 0 2rem 0; /* Add margin on top for phone shape */
+            width: 220px;
+            height: 391px;
+            margin: 2.5rem 0 2rem 0;
             color: var(--text-dark);
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            
-            /* Phone shape details */
-            border-radius: 20px; /* Thicker bezel corners */
-            border: 12px solid #222; /* Black bezel */
+            border-radius: 20px;
+            border: 12px solid #ffffff; 
             box-shadow: 
                 0 10px 40px rgba(0,0,0,0.1),
                 inset 0 0 10px rgba(0,0,0,0.2);
-            background: #fff; /* Plain screen on white background */
+            background: #fff;
             margin-left: 20%;
         }
         
-        /* Power button mock */
         .phone-frame::after {
             content: '';
             position: absolute;
@@ -194,7 +183,6 @@
             border-radius: 2px 0 0 2px;
         }
         
-        /* Camera/Notch mock */
         .phone-frame::before {
             content: '';
             position: absolute;
@@ -214,12 +202,11 @@
             margin-bottom: 0.5rem;
         }
 
-        /* --- Right Sidebar - Non-glass --- */
         .sidebar {
             padding: 1.5rem;
             position: sticky;
             top: 100px;
-            background: transparent; /* No glass panel background */
+            background: transparent;
         }
 
         .sidebar h3 {
@@ -227,12 +214,12 @@
             margin-bottom: 1rem;
             font-size: 1.2rem;
             border-bottom: 1px solid var(--gold-dark-green);
-            padding: 0.75rem 1.25rem; /* Padding for glass */
+            padding: 0.75rem 1.25rem;
         }
 
         .sidebar a {
             display: block;
-            color: var(--text-dark); /* Dark text */
+            color: var(--text-dark);
             text-decoration: none;
             padding: 0.5rem 1.25rem;
             border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -246,12 +233,20 @@
             background: rgba(0, 100, 0, 0.03);
         }
 
+        /* ---> SIDEBAR LINK FOCUS STATE <--- */
+        /* Applied it here too just in case you want the sidebar links to act the same */
+        .sidebar a:focus {
+            border-color: var(--gold-dark-green);
+            color: var(--gold-dark-green);
+            outline: none;
+        }
+
         @media (max-width: 900px) {
             .container {
                 grid-template-columns: 1fr;
             }
             .sidebar {
-                display: none; /* Hide quick links on mobile to save space */
+                display: none;
             }
             nav {
                 flex-direction: column;
@@ -267,7 +262,6 @@
 </head>
 <body>
 
-    <!-- Plain Cream Navigation with Glass Links -->
     <nav>
         <a href="index.html" class="logo">MUK Connect</a>
         <div class="nav-links">
@@ -276,32 +270,28 @@
         </div>
     </nav>
 
-    <!-- Main Grid Container - Non-glass -->
     <div class="container">
         
-        <!-- Left Side: Main Content - Non-glass -->
         <main class="content-card">
             <h1>Project Details & Explanation</h1>
             
             <h2 id="problem">1. The Problem</h2>
             <p>Information about these clubs and their activities is scattered across notice boards, social media platforms, and messaging groups, making it difficult for many students, especially new students, to discover available opportunities.</p>
 
-            <!-- Portrait Mobile Phone Frame -->
             <div class="phone-frame">
-                <div class="placeholder-text">[ Mobile Screen 1 - App View ]</div>
+                <div class="placeholder-text">[ Mobile Screen 1 ]</div>
                 <small>Insert Problem Architecture Here</small>
             </div>
 
             <h2 id="audience">2. Target Audience</h2>
             <p>It includes Makerere University students, who will use the platform to discover clubs and manage their schedules, and club administrators, who will manage club information, events, and membership applications.</p>
             <ul>
-                <li><strong>Student Users:</strong> Regular university students[cite: 1].</li>
-                <li><strong>Club Administrator Users:</strong> Leaders of student clubs. They manage club information, create events, and approve students[cite: 2].</li>
+                <li><strong>Student Users:</strong> Regular university students.</li>
+                <li><strong>Club Administrator Users:</strong> Leaders of student clubs. They manage club information, create events, and approve students.</li>
             </ul>
 
-            <!-- Portrait Mobile Phone Frame -->
             <div class="phone-frame">
-                <div class="placeholder-text">[ Mobile Screen 2 - App View ]</div>
+                <div class="placeholder-text">[ Mobile Screen 2 ]</div>
                 <small>Insert User Roles Flowchart Here</small>
             </div>
 
@@ -314,9 +304,8 @@
                 <li>Mobile phones with internet connection (WiFi or mobile data).</li>
             </ul>
 
-            <!-- Portrait Mobile Phone Frame -->
             <div class="phone-frame">
-                <div class="placeholder-text">[ Mobile Screen 3 - App View ]</div>
+                <div class="placeholder-text">[ Mobile Screen 3 ]</div>
                 <small>Insert Technology Stack Overview Here</small>
             </div>
 
@@ -325,27 +314,24 @@
             <ul>
                 <li><strong>Account Management:</strong> Create an account, log in, and manage profile information.</li>
                 <li><strong>Browse & Join Clubs:</strong> See a list of all clubs, search, and view details.</li>
-                <li><strong>Events & Schedules:</strong> See all club events. Create a personal study schedule and get reminders[cite: 3].</li>
+                <li><strong>Events & Schedules:</strong> See all club events. Create a personal study schedule and get reminders.</li>
             </ul>
 
-            <!-- Portrait Mobile Phone Frame -->
             <div class="phone-frame">
-                <div class="placeholder-text">[ Mobile Screen 4 - App View ]</div>
+                <div class="placeholder-text">[ Mobile Screen 4 ]</div>
                 <small>Insert Use Case Diagram Here</small>
             </div>
 
             <h2 id="benefits">5. Expected Benefits</h2>
             <p>Improving access to club information, enhancing students' time management, increasing participation in campus activities, reducing scheduling conflicts, strengthening communication between students and clubs, and creating a more connected and active university community.</p>
 
-            <!-- Portrait Mobile Phone Frame -->
             <div class="phone-frame">
-                <div class="placeholder-text">[ Mobile Screen 5 - App View ]</div>
+                <div class="placeholder-text">[ Mobile Screen 5 ]</div>
                 <small>Insert User Interface (UI) Screen Flow Here</small>
             </div>
             
         </main>
 
-        <!-- Right Side: Sticky Quick Links Navigation - Non-glass -->
         <aside class="sidebar">
             <h3>Page Navigation</h3>
             <a href="#problem">1. The Problem</a>
