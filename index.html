@@ -3,320 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUK Connect - Project Portfolio</title>
+    <title>MUK Connect - Introduction</title>
     <style>
-        /* Modern 2026 Responsive Stylesheet */
+        /* Modern 2026 CSS Reset & Variables */
         :root {
-            --primary: #0284c7;
-            --primary-hover: #0369a1;
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --radius: 12px;
+            --primary-color: #0056b3;
+            --text-color: #333333;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            background-color: var(--background-light);
+            color: var(--text-color);
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
 
-        /* Header & Navigation */
-        header {
-            background: rgba(30, 41, 59, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border-color);
-        }
-
+        /* Navigation */
         nav {
-            max-width: 1000px;
-            margin: 0 auto;
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
         }
 
         .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        nav a {
+            color: var(--white);
             text-decoration: none;
+            font-weight: 600;
+            margin-left: 1.5rem;
+            transition: opacity 0.2s;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
         }
 
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Main Layout */
+        /* Layout Containers */
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 2rem auto;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
 
         .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 2rem;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
             margin-bottom: 2rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         }
 
+        /* Typography */
         h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            border-bottom: 2px solid var(--border-color);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
         }
 
         h2 {
-            font-size: 1.4rem;
-            margin: 2rem 0 0.75rem 0;
-            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--primary-color);
         }
 
         p {
             margin-bottom: 1rem;
-            color: var(--text-muted);
+            font-size: 1.05rem;
         }
 
         ul {
-            margin-left: 1.5rem;
+            margin-left: 2rem;
             margin-bottom: 1rem;
-            color: var(--text-muted);
         }
 
         li {
             margin-bottom: 0.5rem;
         }
 
-        /* Placeholders for Images & Diagrams */
-        .img-container, .diagram-container {
+        /* Image Placeholder */
+        .image-placeholder {
             width: 100%;
-            background: #0f172a;
-            border: 2px dashed var(--border-color);
-            border-radius: var(--radius);
+            background-color: #e2e8f0;
+            border: 2px dashed #94a3b8;
+            border-radius: var(--border-radius);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: var(--text-muted);
-            margin: 1.5rem 0;
-            padding: 2rem 1rem;
+            color: #475569;
+            margin-bottom: 2rem;
             text-align: center;
-        }
-
-        .img-container {
-            min-height: 280px;
-        }
-
-        .diagram-container {
-            min-height: 220px;
-        }
-
-        .placeholder-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        /* Dropdown Menu Styling */
-        details {
-            background: #0f172a;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
             padding: 1rem;
-            margin: 1.5rem 0;
+            height: 350px;
+        }
+
+        .placeholder-text {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Dropdown */
+        details {
+            background: var(--background-light);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 2rem 0;
         }
 
         summary {
-            font-weight: 600;
+            font-weight: bold;
+            font-size: 1.1rem;
             cursor: pointer;
-            color: var(--primary);
-            user-select: none;
+            color: var(--primary-color);
             outline: none;
         }
 
-        summary:hover {
-            color: var(--primary-hover);
+        details ul {
+            margin-top: 1rem;
+            list-style-type: none;
+            margin-left: 0;
         }
 
-        .contributors-list {
-            list-style: none;
-            margin: 1rem 0 0 0;
-            padding-left: 0;
-        }
-
-        .contributors-list li {
+        details li {
             padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-main);
+            border-bottom: 1px solid #ddd;
         }
 
-        .contributors-list li:last-child {
+        details li:last-child {
             border-bottom: none;
         }
 
-        /* Mobile Screen Optimization */
-        @media (max-width: 640px) {
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
             nav {
                 flex-direction: column;
+                text-align: center;
                 gap: 1rem;
             }
-            
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
+            nav a {
+                margin: 0 0.5rem;
             }
-
             .card {
-                padding: 1.25rem;
+                padding: 1.5rem;
             }
-
             h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.2rem;
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="#" class="logo">MUK Connect</a>
-            <ul class="nav-links">
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#details">Project Details</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navigation Header -->
+    <nav>
+        <div class="logo">MUK Connect</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="details.html">Project Details</a>
+        </div>
+    </nav>
 
-    <main class="container">
-        
-        <!-- ==========================================
-             PAGE 1: INTRODUCTION & SUMMARY
-        =========================================== -->
-        <section id="introduction" class="card">
-            <h1>MUK Connect - Introduction</h1>
+    <div class="container">
+        <section class="card">
+            <h1>Welcome to MUK Connect</h1>
             
             <!-- Project Picture Placeholder -->
-            <div class="img-container">
-                <span class="placeholder-title">[ Insert Main Project Picture Here ]</span>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Replace this block with your app screenshot or logo</p>
+            <div class="image-placeholder">
+                <div class="placeholder-text">[ Insert Project Picture Here ]</div>
+                <small>Replace this box with your application screenshot or logo</small>
             </div>
 
-            <!-- Dropdown for 5 Contributors -->
+            <h2>Project Summary</h2>
+            <p>Makerere University has a wide range of student clubs and organizations that promote leadership, networking, learning, and personal development[cite: 1]. The proposed solution is the development of MUK Connect, a smart mobile application that centralizes information about officially recognized student clubs while helping students plan their daily activities[cite: 1].</p>
+            
+            <p>The application will allow users to browse clubs, apply for membership, register for events, create personal schedules, and receive personalized recommendations for club events and campus activities that fit into their free time without causing scheduling conflicts[cite: 1].</p>
+
+            <!-- Dropdown of 5 Contributors -->
             <details>
-                <summary>Project Contributors (Group 3)</summary>
-                <ul class="contributors-list">
+                <summary>View Project Contributors (Group 3)</summary>
+                <ul>
                     <li><strong>Ahereza Albert</strong> — Reg: 25/U/24153 | Std No: 2500724153[cite: 1, 2]</li>
                     <li><strong>Akurutu Patience</strong> — Reg: 25/U/03320/EVE | Std No: 2500703320[cite: 1, 2]</li>
                     <li><strong>Mutebi Steven</strong> — Reg: 25/U/03479/PSA | Std No: 2500703479[cite: 1, 2]</li>
                     <li><strong>Peter Emmanuel Ngobi</strong> — Reg: 25/U/15563/PS | Std No: 2500715563[cite: 1, 2]</li>
-                    <li><strong>[Insert 5th Contributor Name]</strong> — Reg: [Insert] | Std No: [Insert]</li>
+                    <li><strong>[Insert Contributor 5 Name Here]</strong> — Reg: [Number] | Std No: [Number]</li>
                 </ul>
             </details>
-
-            <h2>Project Summary</h2>
-            <p>Makerere University has a wide range of student clubs and organizations that promote leadership, networking, learning, and personal development[cite: 1]. However, information about these clubs and their activities is scattered across notice boards, social media platforms, and messaging groups, making it difficult for many students, especially new students, to discover available opportunities[cite: 1]. In addition, students often struggle to balance their academic responsibilities with extracurricular activities because they lack a simple way to organize their schedules[cite: 1].</p>
-            
-            <p>The proposed solution is the development of MUK Connect, a smart mobile application that centralizes information about officially recognized student clubs while helping students plan their daily activities[cite: 1]. The application will allow users to browse clubs, apply for membership, register for events, create personal schedules, and receive personalized recommendations for club events and campus activities that fit into their free time without causing scheduling conflicts[cite: 1].</p>
         </section>
-
-
-        <!-- ==========================================
-             PAGE 2: FULL DESCRIPTION & DIAGRAMS
-        =========================================== -->
-        <section id="details" class="card">
-            <h1>Project Details & Explanations</h1>
-
-            <h2>1. System Architecture & Problem Context</h2>
-            <p>Right now, students struggle to find information about clubs because club details are scattered across WhatsApp groups, Facebook pages, and email[cite: 2]. There is no central place where students can see all clubs and events[cite: 2]. MUK Connect brings together a list of all student clubs at Makerere University, information about club activities, and a personal schedule tool to plan study time[cite: 2].</p>
-            
-            <div class="diagram-container">
-                <span class="placeholder-title">[ Visual Diagram 1: System Context Diagram ]</span>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">A diagram showing Students using the mobile app, Club Leaders using admin features, Makerere University providing data, and the app connected to Firebase[cite: 2].</p>
-            </div>
-
-            <h2>2. Target Audience</h2>
-            <p>The platform is designed for two main groups of users[cite: 1]:</p>
-            <ul>
-                <li><strong>Student Users:</strong> Regular university students who want to find clubs, see events, and manage their time[cite: 2].</li>
-                <li><strong>Club Administrators:</strong> Leaders of student clubs who manage club information, create events, and approve students who want to join[cite: 2].</li>
-            </ul>
-
-            <div class="diagram-container">
-                <span class="placeholder-title">[ Visual Diagram 2: User Roles & Permissions Flow ]</span>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Visual representation separating Student capabilities from Admin capabilities.</p>
-            </div>
-
-            <h2>3. Technology & Methodology</h2>
-            <p>The methodology involves developing the application using Flutter for cross-platform mobile development and Firebase for user authentication, cloud database management, and real-time notifications[cite: 1]. The app needs internet access to work and connects to Firebase servers in the cloud to store data[cite: 2].</p>
-
-            <div class="diagram-container">
-                <span class="placeholder-title">[ Visual Diagram 3: Tech Stack Overview ]</span>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Illustration showing Flutter communicating with Firebase Authentication, Cloud Firestore, and Firebase Cloud Messaging (FCM)[cite: 2].</p>
-            </div>
-
-            <h2>4. Core Functionalities</h2>
-            <p>MUK Connect allows students and club leaders to perform several key activities[cite: 2]:</p>
-            <ul>
-                <li><strong>Account Management:</strong> Create an account, log in, and manage profile information[cite: 2].</li>
-                <li><strong>Browse & Join Clubs:</strong> See a list of all clubs, search for clubs, view club details, and request to join[cite: 2].</li>
-                <li><strong>Events Management:</strong> See all club events with dates, times, and locations, and register to attend[cite: 2].</li>
-                <li><strong>Personal Schedule Management:</strong> Create personal schedule items, view schedules in a calendar, and automatically add registered events[cite: 2].</li>
-            </ul>
-
-            <div class="diagram-container">
-                <span class="placeholder-title">[ Visual Diagram 4: Use Case Diagram ]</span>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Actors (Student, Club Administrator, Firebase System) interacting with core use cases like Register, Browse Clubs, and Manage Schedule[cite: 2].</p>
-            </div>
-
-            <h2>5. Expected Benefits & Non-Functional Requirements</h2>
-            <p>The expected benefits include improving access to club information, enhancing students' time management, increasing participation in campus activities, reducing scheduling conflicts, strengthening communication, and creating a more connected university community[cite: 1].</p>
-            <p>The app must meet strict performance and security goals, such as starting in less than 3 seconds, encrypting all passwords, and ensuring students can only see their own personal information[cite: 2].</p>
-
-            <div class="diagram-container">
-                <span class="placeholder-title">[ Visual Diagram 5: User Interface Screen Flow ]</span>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Wireframe or flowchart showing navigation between Login, Home, Club Details, and Schedule screens[cite: 2].</p>
-            </div>
-            
-        </section>
-    </main>
+    </div>
 
 </body>
 </html>

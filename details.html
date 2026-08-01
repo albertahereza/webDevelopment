@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUK Connect - Project Details</title>
+    <style>
+        /* Modern 2026 CSS Reset & Variables */
+        :root {
+            --primary-color: #0056b3;
+            --text-color: #333333;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 1.5rem;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Layout Containers */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Diagram Placeholders */
+        .diagram-placeholder {
+            width: 100%;
+            background-color: #e2e8f0;
+            border: 2px dashed #94a3b8;
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            margin-bottom: 2rem;
+            text-align: center;
+            padding: 1rem;
+            height: 250px;
+        }
+
+        .placeholder-text {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            nav a {
+                margin: 0 0.5rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav>
+        <div class="logo">MUK Connect</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="details.html">Project Details</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="card">
+            <h1>Project Details & Explanation</h1>
+            
+            <h2>1. The Problem</h2>
+            <p>Information about these clubs and their activities is scattered across notice boards, social media platforms, and messaging groups, making it difficult for many students, especially new students, to discover available opportunities[cite: 1]. In addition, students often struggle to balance their academic responsibilities with extracurricular activities because they lack a simple way to organize their schedules and identify activities that fit into their available time[cite: 1].</p>
+
+            <!-- Diagram 1 -->
+            <div class="diagram-placeholder">
+                <div class="placeholder-text">[ Visual Diagram 1 ]</div>
+                <small>Insert Problem Architecture or System Context Diagram Here[cite: 2]</small>
+            </div>
+
+            <h2>2. Target Audience</h2>
+            <p>It includes Makerere University students, who will use the platform to discover clubs and manage their schedules, and club administrators, who will manage club information, events, and membership applications[cite: 1].</p>
+            <ul>
+                <li><strong>Student Users:</strong> These are regular university students[cite: 2]. They want to find clubs, see events, and manage their time[cite: 2].</li>
+                <li><strong>Club Administrator Users:</strong> These are leaders of student clubs[cite: 2]. They manage club information, create events, and approve students who want to join[cite: 2].</li>
+            </ul>
+
+            <!-- Diagram 2 -->
+            <div class="diagram-placeholder">
+                <div class="placeholder-text">[ Visual Diagram 2 ]</div>
+                <small>Insert User Roles and Audience Flowchart Here</small>
+            </div>
+
+            <h2>3. Methodology & Operating Environment</h2>
+            <p>Involves developing the application using Flutter for cross-platform mobile development and Firebase for user authentication, cloud database management, and real-time notifications[cite: 1].</p>
+            <p>The MUK Connect app will run on:</p>
+            <ul>
+                <li>Android phones with version 5.0 or newer[cite: 2].</li>
+                <li>iPhones with iOS version 11.0 or newer[cite: 2].</li>
+                <li>Mobile phones with internet connection (WiFi or mobile data)[cite: 2].</li>
+            </ul>
+
+            <!-- Diagram 3 -->
+            <div class="diagram-placeholder">
+                <div class="placeholder-text">[ Visual Diagram 3 ]</div>
+                <small>Insert Technology Stack Overview (Flutter & Firebase) Here</small>
+            </div>
+
+            <h2>4. Key Functionalities</h2>
+            <p>MUK Connect allows students and club leaders to do these main activities[cite: 2]:</p>
+            <ul>
+                <li><strong>Account Management:</strong> Create an account, log in, and manage profile information[cite: 2].</li>
+                <li><strong>Browse & Join Clubs:</strong> See a list of all clubs, search for clubs, and view club details[cite: 2]. Request to join a club and see approval status[cite: 2].</li>
+                <li><strong>Events & Schedules:</strong> See all club events with dates, times, and locations[cite: 2]. Create a personal study schedule and get reminders[cite: 2].</li>
+            </ul>
+
+            <!-- Diagram 4 -->
+            <div class="diagram-placeholder">
+                <div class="placeholder-text">[ Visual Diagram 4 ]</div>
+                <small>Insert Use Case Diagram showing student and admin activities Here[cite: 2]</small>
+            </div>
+
+            <h2>5. Expected Benefits</h2>
+            <p>Improving access to club information, enhancing students' time management, increasing participation in campus activities, reducing scheduling conflicts, strengthening communication between students and clubs, and creating a more connected and active university community[cite: 1].</p>
+
+            <!-- Diagram 5 -->
+            <div class="diagram-placeholder">
+                <div class="placeholder-text">[ Visual Diagram 5 ]</div>
+                <small>Insert User Interface (UI) Screen Flow Here</small>
+            </div>
+            
+        </section>
+    </div>
+
+</body>
+</html>
