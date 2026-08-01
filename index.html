@@ -3,215 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUK Connect - Introduction</title>
+    <title>MUK Connect - Glassmorphism</title>
     <style>
-        /* Modern 2026 CSS Reset & Variables */
+        /* Modern 2026 Glassmorphic Stylesheet */
         :root {
-            --primary-color: #0056b3;
-            --text-color: #333333;
-            --background-light: #f8f9fa;
-            --white: #ffffff;
-            --border-radius: 12px;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --sky-blue: #38bdf8;
+            --deep-blue: #0284c7;
+            --dark-bg: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #e2e8f0;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --radius: 16px;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--background-light);
-            color: var(--text-color);
+            /* Vibrant Blue to Sky Blue Mesh Gradient Background */
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--deep-blue) 50%, var(--sky-blue) 100%);
+            background-attachment: fixed;
+            color: var(--text-main);
             line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Glassmorphism Utility Class */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
         }
 
         /* Navigation */
         nav {
-            background-color: var(--primary-color);
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 2rem;
+            border-radius: 0 0 var(--radius) var(--radius);
+            border-top: none;
         }
 
         .logo {
-            color: var(--white);
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        nav a {
-            color: var(--white);
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            margin-left: 1.5rem;
-            transition: opacity 0.2s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
         }
 
-        nav a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Layout Containers */
+        /* Layout Grid for Top-Right Contributors */
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem 2rem 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+            align-items: start;
         }
 
         /* Typography */
         h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
         h2 {
             font-size: 1.5rem;
-            margin: 2rem 0 1rem 0;
-            color: var(--primary-color);
+            margin: 1.5rem 0 1rem 0;
+            color: var(--sky-blue);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
         p {
             margin-bottom: 1rem;
+            color: var(--text-main);
             font-size: 1.05rem;
         }
 
-        ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
+        .content-card {
+            padding: 2rem;
         }
 
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Image Placeholder */
+        /* Glass Bound Picture Placeholders */
         .image-placeholder {
             width: 100%;
-            background-color: #e2e8f0;
-            border: 2px dashed #94a3b8;
-            border-radius: var(--border-radius);
+            height: 350px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #475569;
-            margin-bottom: 2rem;
             text-align: center;
-            padding: 1rem;
-            height: 350px;
+            margin: 2rem 0;
+            color: #ffffff;
+            /* Extra glass styling for the image boundary */
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(56, 189, 248, 0.5); /* Sky blue tinted border */
         }
 
         .placeholder-text {
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            color: var(--sky-blue);
             margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
 
-        /* Dropdown */
-        details {
-            background: var(--background-light);
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
+        /* Right Top Sidebar (Contributors) */
+        .sidebar {
             padding: 1.5rem;
-            margin: 2rem 0;
         }
 
-        summary {
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            color: var(--primary-color);
-            outline: none;
+        .sidebar h3 {
+            color: var(--sky-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
         }
 
-        details ul {
-            margin-top: 1rem;
-            list-style-type: none;
-            margin-left: 0;
+        .contributors-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
-        details li {
+        .contributors-list li {
             padding: 0.75rem 0;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
         }
 
-        details li:last-child {
+        .contributors-list li:last-child {
             border-bottom: none;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
+        .contributor-name {
+            display: block;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        /* Mobile Responsive adjustments */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            /* Move contributors below the main intro on mobile */
+            .sidebar {
+                grid-row: 2;
+            }
             nav {
                 flex-direction: column;
-                text-align: center;
                 gap: 1rem;
-            }
-            nav a {
-                margin: 0 0.5rem;
-            }
-            .card {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Header -->
-    <nav>
-        <div class="logo">MUK Connect</div>
-        <div>
+    <!-- Glass Navigation -->
+    <nav class="glass-panel">
+        <a href="index.html" class="logo">MUK Connect</a>
+        <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="details.html">Project Details</a>
         </div>
     </nav>
 
+    <!-- Main Grid Container -->
     <div class="container">
-        <section class="card">
+        
+        <!-- Left Side: Main Content -->
+        <main class="glass-panel content-card">
             <h1>Welcome to MUK Connect</h1>
             
-            <!-- Project Picture Placeholder -->
-            <div class="image-placeholder">
+            <!-- Glass Boundary Project Picture Placeholder -->
+            <div class="glass-panel image-placeholder">
                 <div class="placeholder-text">[ Insert Project Picture Here ]</div>
-                <small>Replace this box with your application screenshot or logo</small>
+                <small>Replace this box with your application screenshot</small>
             </div>
 
             <h2>Project Summary</h2>
             <p>Makerere University has a wide range of student clubs and organizations that promote leadership, networking, learning, and personal development[cite: 1]. The proposed solution is the development of MUK Connect, a smart mobile application that centralizes information about officially recognized student clubs while helping students plan their daily activities[cite: 1].</p>
             
             <p>The application will allow users to browse clubs, apply for membership, register for events, create personal schedules, and receive personalized recommendations for club events and campus activities that fit into their free time without causing scheduling conflicts[cite: 1].</p>
+        </main>
 
-            <!-- Dropdown of 5 Contributors -->
-            <details>
-                <summary>View Project Contributors (Group 3)</summary>
-                <ul>
-                    <li><strong>Ahereza Albert</strong> — Reg: 25/U/24153 | Std No: 2500724153[cite: 1, 2]</li>
-                    <li><strong>Akurutu Patience</strong> — Reg: 25/U/03320/EVE | Std No: 2500703320[cite: 1, 2]</li>
-                    <li><strong>Mutebi Steven</strong> — Reg: 25/U/03479/PSA | Std No: 2500703479[cite: 1, 2]</li>
-                    <li><strong>Peter Emmanuel Ngobi</strong> — Reg: 25/U/15563/PS | Std No: 2500715563[cite: 1, 2]</li>
-                    <li><strong>[Insert Contributor 5 Name Here]</strong> — Reg: [Number] | Std No: [Number]</li>
-                </ul>
-            </details>
-        </section>
+        <!-- Right Side (Top): Contributors List -->
+        <aside class="glass-panel sidebar">
+            <h3>Project Contributors (Group 3)</h3>
+            <ul class="contributors-list">
+                <li>
+                    <span class="contributor-name">Ahereza Albert</span>
+                    Reg: 25/U/24153<br>Std No: 2500724153[cite: 1, 2]
+                </li>
+                <li>
+                    <span class="contributor-name">Akurutu Patience</span>
+                    Reg: 25/U/03320/EVE<br>Std No: 2500703320[cite: 1, 2]
+                </li>
+                <li>
+                    <span class="contributor-name">Mutebi Steven</span>
+                    Reg: 25/U/03479/PSA<br>Std No: 2500703479[cite: 1, 2]
+                </li>
+                <li>
+                    <span class="contributor-name">Peter Emmanuel Ngobi</span>
+                    Reg: 25/U/15563/PS<br>Std No: 2500715563[cite: 1, 2]
+                </li>
+                <li>
+                    <span class="contributor-name">[Contributor 5 Name]</span>
+                    Reg: [Number]<br>Std No: [Number]
+                </li>
+            </ul>
+        </aside>
+
     </div>
 
 </body>
