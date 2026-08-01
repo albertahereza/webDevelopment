@@ -143,26 +143,25 @@
         /* --- Phone Frame (Kept your logic, updated shadows to match flat design) --- */
         .phone-frame {
             position: relative;
-            width: 220px;
-            height: auto;
-            margin: 3rem auto; /* Centered */
-            color: var(--dark-heading);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 30px;
-            border: 10px solid #ffffff; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08); /* Softer, modern shadow */
+            width: 100%;
+            max-width: 260px; /* Adjust width as needed */
+            margin: 2.5rem auto; /* Centers the image */
+            border-radius: 20px;
+            overflow: hidden; /* Clips the image inside the rounded corners */
             background: transparent;
-            transition: border-color 0.3s ease;
-            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Clean modern shadow */
+            border: none; /* Completely removes any dotted/dashed boundaries */
         }
 
         .phone-frame:focus {
             border-color: var(--primary-green);
             outline: none;
+        }
+
+        .phone-frame img {
+            width: 100%;
+            display: block;
+            height: auto;
         }
         
         .phone-frame::after {
@@ -276,8 +275,7 @@
             <p>Information about these clubs and their activities is scattered across notice boards, social media platforms, and messaging groups, making it difficult for many students, especially new students, to discover available opportunities.</p>
 
             <div class="phone-frame" tabindex="0">
-                <div class="placeholder-text">[ Mobile Screen 1 ]</div>
-                <small>Insert Problem Architecture Here</small>
+                <img src="z.png" alt="Problem Architecture Screenshot">
             </div>
 
             <h2 id="audience">2. Target Audience</h2>
@@ -288,8 +286,7 @@
             </ul>
 
             <div class="phone-frame" tabindex="0">
-                <div class="placeholder-text">[ Mobile Screen 2 ]</div>
-                <small>Insert User Roles Flowchart Here</small>
+                <img src="w.jpeg" alt="User Roles Flowchart Screenshot">
             </div>
 
             <h2 id="methodology">3. Methodology & Environment</h2>
@@ -302,8 +299,7 @@
             </ul>
 
             <div class="phone-frame" tabindex="0">
-                <div class="placeholder-text">[ Mobile Screen 3 ]</div>
-                <small>Insert Technology Stack Overview Here</small>
+                <img src="p.jpeg" alt="Technology Stack Overview Screenshot">
             </div>
 
             <h2 id="features">4. Key Functionalities</h2>
@@ -315,16 +311,14 @@
             </ul>
 
             <div class="phone-frame" tabindex="0">
-                <div class="placeholder-text">[ Mobile Screen 4 ]</div>
-                <small>Insert Use Case Diagram Here</small>
+                <img src="y.jpeg" alt="Use Case Diagram Screenshot">
             </div>
 
             <h2 id="benefits">5. Expected Benefits</h2>
             <p>Improving access to club information, enhancing students' time management, increasing participation in campus activities, reducing scheduling conflicts, strengthening communication between students and clubs, and creating a more connected and active university community.</p>
 
             <div class="phone-frame" tabindex="0">
-                <div class="placeholder-text">[ Mobile Screen 5 ]</div>
-                <small>Insert User Interface (UI) Screen Flow Here</small>
+                <img src="x.jpeg" alt="User Interface Flow Screenshot">
             </div>
             
         </main>
