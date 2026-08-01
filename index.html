@@ -8,8 +8,8 @@
         :root {
             --bg-color: #f4faf6; 
             --primary-green: #38a169; 
-            --dark-heading: #0f291e; 
-            --text-gray: #555b57; 
+            --forest-dark: #0B2017; 
+            --text-muted: #5c7066; 
             --light-pill-bg: #e8f2eb; 
             --light-pill-border: #d1e3d6;
             --radius: 16px;
@@ -93,11 +93,11 @@
 
         /* --- Typography --- */
         h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--dark-heading);
-            margin-bottom: 1.5rem;
-            letter-spacing: -1.5px;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--forest-dark);
+            margin-bottom: 24px;
+            max-width: 900px;
             line-height: 1.1;
         }
 
@@ -105,12 +105,12 @@
             font-size: 2rem;
             font-weight: 800;
             margin: 3rem 0 1rem 0;
-            color: var(--dark-heading);
+            color: var(--forest-dark);
             letter-spacing: -0.5px;
         }
 
         h3 {
-            color: var(--dark-heading);
+            color: var(--forest-dark);
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
             font-weight: 800;
@@ -119,10 +119,11 @@
         }
 
         p {
-            margin-bottom: 1.5rem;
-            color: var(--text-gray);
-            font-size: 1.15rem;
-            line-height: 1.7;
+            font-weight: 300;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin-bottom: 40px;
         }
 
         .content-card {
