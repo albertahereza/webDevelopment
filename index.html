@@ -132,14 +132,14 @@
         /* --- Image Placeholder --- */
         .image-placeholder {
             width: 100%;
-            height: 350px;
+            height: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             margin: 2rem 0;
-            background: #ffffff;
+            background: transparent;
             border: 2px dashed var(--light-pill-border);
             border-radius: 20px;
             color: var(--text-gray);
@@ -226,9 +226,8 @@
             <h1>Welcome to MUK Connect</h1>
             
             <!-- Project Picture Placeholder -->
-            <div class="image-placeholder">
-                <div class="placeholder-text">[ Insert Project Picture Here ]</div>
-                <small>Replace this box with your application screenshot</small>
+            <div class="image-placeholder" style="padding: 0; overflow: hidden;">
+              <img src="app.jpeg" alt="MUK Connect App Screenshot">
             </div>
 
             <h2>Project Summary</h2>
@@ -257,10 +256,7 @@
                     <span class="contributor-name">Peter Emmanuel Ngobi</span>
                     Reg: 25/U/15563/PS<br>Std No: 2500715563
                 </li>
-                <li>
-                    <span class="contributor-name">[Contributor 5 Name]</span>
-                    Reg: [Number]<br>Std No: [Number]
-                </li>
+                
             </ul>
         </aside>
 
