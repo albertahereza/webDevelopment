@@ -6,60 +6,53 @@
     <title>MUK Connect - Project Details</title>
     <style>
         :root {
-            --cream-bg: #fff8e1;
-            --gold-dark-green: #006400; 
-            --text-dark: #333; 
-            --glass-bg: rgba(255, 255, 255, 0.5); 
-            --glass-border: rgba(255, 255, 255, 0.8);
-            --radius: 16px;
+            /* Matched colors from the image */
+            --bg-color: #f4faf6; 
+            --primary-green: #38a169; /* The solid button green */
+            --dark-heading: #0f291e; /* Very dark green/black for headings */
+            --text-gray: #555b57; /* Softer gray for paragraphs */
+            --light-pill-bg: #e8f2eb; /* Inactive button background */
+            --light-pill-border: #d1e3d6;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            /* Using a geometric system font stack for the bold look */
+            font-family: 'Montserrat', 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--cream-bg);
-            background-attachment: fixed;
-            color: var(--text-dark);
+            background-color: var(--bg-color);
+            color: var(--text-gray);
             line-height: 1.6;
             min-height: 100vh;
         }
 
-        .glass-element {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius);
-            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.05); 
-        }
-
+        /* --- Navigation --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            margin-bottom: 2rem;
-            border-radius: 0 0 var(--radius) var(--radius);
-            border-top: none;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
+            background-color: var(--bg-color); /* Solid background to hide text when scrolling */
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--gold-dark-green);
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--dark-heading);
             text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        /* Matches the two-tone logo in the image */
+        .logo span {
+            color: var(--primary-green);
         }
 
         .nav-links {
@@ -67,118 +60,119 @@
             gap: 1rem;
         }
 
+        /* Pill Buttons (Inactive state matches "2. Architecture & Details") */
         .nav-links a {
-            color: var(--text-dark);
+            color: var(--dark-heading);
             text-decoration: none;
-            font-weight: 600;
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px; /* Makes it a pill shape */
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            background: var(--light-pill-bg);
+            border: 1px solid var(--light-pill-border);
         }
 
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.8);
-            color: var(--gold-dark-green);
-        }
-
-        /* ---> NAV LINK FOCUS STATE: Turns green when clicked <--- */
+        /* Pill Buttons (Active/Focus state matches "1. Project Overview") */
+        .nav-links a:hover,
         .nav-links a:focus {
-            border-color: var(--gold-dark-green);
-            color: var(--gold-dark-green);
-            background: rgba(255, 255, 255, 0.9);
-            outline: none; 
+            background: var(--primary-green);
+            color: #ffffff;
+            border-color: var(--primary-green);
+            outline: none;
         }
 
+        /* --- Layout Containers --- */
         .container {
-            max-width: 1200px;
+            max-width: 1000px; /* Narrowed slightly for better reading width */
             margin: 0 auto;
-            padding: 0 1.5rem 2rem 1.5rem;
+            padding: 0 1.5rem 4rem 1.5rem;
             display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 2rem;
+            grid-template-columns: 1fr 250px;
+            gap: 3rem;
             align-items: start;
         }
 
+        /* --- Typography (Matching the heavy image headers) --- */
         h1 {
-            font-size: 2.2rem;
-            color: var(--gold-dark-green);
-            display: block;
-            margin-bottom: 1.5rem;
-            padding: 1rem 1.5rem; 
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--dark-heading);
+            text-align: center;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -1.5px;
         }
 
         h2 {
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem 0;
-            color: var(--gold-dark-green);
-            border-bottom: 2px solid rgba(0,100,0,0.1);
-            padding-bottom: 0.5rem;
-            display: block;
-            padding: 0.75rem 1.25rem;
-        }
-
-        h1, h2, h3 {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius);
-            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.05);
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 3rem 0 1rem 0;
+            color: var(--dark-heading);
+            letter-spacing: -0.5px;
         }
 
         p {
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            font-size: 1.05rem;
-            padding: 0 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 1.25rem; /* Larger, readable text like the image */
+            line-height: 1.7;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.35rem;
+            margin-bottom: 4rem;
         }
 
         ul {
-            margin-left: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-gray);
+            font-size: 1.15rem;
         }
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .content-card {
             padding: 0;
-            background: transparent;
         }
 
+        /* --- Phone Frame (Kept your logic, updated shadows to match flat design) --- */
         .phone-frame {
             position: relative;
             width: 220px;
             height: 391px;
-            margin: 2.5rem 0 2rem 0;
-            color: var(--text-dark);
+            margin: 3rem auto; /* Centered */
+            color: var(--dark-heading);
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-radius: 20px;
-            border: 12px solid #ffffff; 
-            box-shadow: 
-                0 10px 40px rgba(0,0,0,0.1),
-                inset 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 30px;
+            border: 10px solid #ffffff; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08); /* Softer, modern shadow */
             background: #fff;
-            margin-left: 20%;
+            transition: border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .phone-frame:focus {
+            border-color: var(--primary-green);
+            outline: none;
         }
         
         .phone-frame::after {
             content: '';
             position: absolute;
             top: 50%;
-            right: -12px;
+            right: -10px;
             width: 3px;
             height: 40px;
-            background: #444;
+            background: #ddd;
             transform: translateY(-50%);
             border-radius: 2px 0 0 2px;
         }
@@ -186,58 +180,58 @@
         .phone-frame::before {
             content: '';
             position: absolute;
-            top: 6px;
+            top: 8px;
             left: 50%;
-            width: 50px;
-            height: 10px;
-            background: #111;
+            width: 40px;
+            height: 6px;
+            background: #eee;
             transform: translateX(-50%);
             border-radius: 5px;
         }
 
         .placeholder-text {
-            font-weight: bold;
+            font-weight: 800;
             font-size: 1rem;
-            color: var(--gold-dark-green);
+            color: var(--primary-green);
             margin-bottom: 0.5rem;
         }
 
+        /* --- Sidebar --- */
         .sidebar {
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             position: sticky;
             top: 100px;
-            background: transparent;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
         .sidebar h3 {
-            color: var(--gold-dark-green);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            border-bottom: 1px solid var(--gold-dark-green);
-            padding: 0.75rem 1.25rem;
+            color: var(--dark-heading);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .sidebar a {
             display: block;
-            color: var(--text-dark);
+            color: var(--text-gray);
             text-decoration: none;
-            padding: 0.5rem 1.25rem;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border-radius: 8px;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s ease;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        .sidebar a:hover {
-            padding-left: 20px;
-            color: var(--gold-dark-green);
-            background: rgba(0, 100, 0, 0.03);
-        }
-
-        /* ---> SIDEBAR LINK FOCUS STATE <--- */
-        /* Applied it here too just in case you want the sidebar links to act the same */
+        .sidebar a:hover,
         .sidebar a:focus {
-            border-color: var(--gold-dark-green);
-            color: var(--gold-dark-green);
+            color: var(--primary-green);
+            background: var(--light-pill-bg);
             outline: none;
         }
 
@@ -250,12 +244,10 @@
             }
             nav {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
             }
-            .phone-frame {
-                width: 180px;
-                height: 320px;
-                margin-left: 0;
+            h1 {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -263,22 +255,27 @@
 <body>
 
     <nav>
-        <a href="index.html" class="logo">MUK Connect</a>
+        <!-- Added a span to make "Connect" green, matching "SmartSpace Analytics" -->
+        <a href="index.html" class="logo">MUK <span>Connect</span></a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="details.html">Project Details</a>
+            <a href="index.html" tabindex="0">Home</a>
+            <a href="details.html" tabindex="0">Project Details</a>
         </div>
     </nav>
 
     <div class="container">
         
         <main class="content-card">
+            <!-- Header styled to match the massive dark text in the image -->
             <h1>Project Details & Explanation</h1>
+            
+            <!-- Intro paragraph styled to match the centered, gray text in the image -->
+            <p class="intro-text">A centralized platform connecting Makerere University students to campus clubs, eliminating guesswork and empowering both administrators and members.</p>
             
             <h2 id="problem">1. The Problem</h2>
             <p>Information about these clubs and their activities is scattered across notice boards, social media platforms, and messaging groups, making it difficult for many students, especially new students, to discover available opportunities.</p>
 
-            <div class="phone-frame">
+            <div class="phone-frame" tabindex="0">
                 <div class="placeholder-text">[ Mobile Screen 1 ]</div>
                 <small>Insert Problem Architecture Here</small>
             </div>
@@ -290,12 +287,12 @@
                 <li><strong>Club Administrator Users:</strong> Leaders of student clubs. They manage club information, create events, and approve students.</li>
             </ul>
 
-            <div class="phone-frame">
+            <div class="phone-frame" tabindex="0">
                 <div class="placeholder-text">[ Mobile Screen 2 ]</div>
                 <small>Insert User Roles Flowchart Here</small>
             </div>
 
-            <h2 id="methodology">3. Methodology & Operating Environment</h2>
+            <h2 id="methodology">3. Methodology & Environment</h2>
             <p>Involves developing the application using Flutter for cross-platform mobile development and Firebase for user authentication, cloud database management, and real-time notifications.</p>
             <p>The MUK Connect app will run on:</p>
             <ul>
@@ -304,7 +301,7 @@
                 <li>Mobile phones with internet connection (WiFi or mobile data).</li>
             </ul>
 
-            <div class="phone-frame">
+            <div class="phone-frame" tabindex="0">
                 <div class="placeholder-text">[ Mobile Screen 3 ]</div>
                 <small>Insert Technology Stack Overview Here</small>
             </div>
@@ -317,7 +314,7 @@
                 <li><strong>Events & Schedules:</strong> See all club events. Create a personal study schedule and get reminders.</li>
             </ul>
 
-            <div class="phone-frame">
+            <div class="phone-frame" tabindex="0">
                 <div class="placeholder-text">[ Mobile Screen 4 ]</div>
                 <small>Insert Use Case Diagram Here</small>
             </div>
@@ -325,7 +322,7 @@
             <h2 id="benefits">5. Expected Benefits</h2>
             <p>Improving access to club information, enhancing students' time management, increasing participation in campus activities, reducing scheduling conflicts, strengthening communication between students and clubs, and creating a more connected and active university community.</p>
 
-            <div class="phone-frame">
+            <div class="phone-frame" tabindex="0">
                 <div class="placeholder-text">[ Mobile Screen 5 ]</div>
                 <small>Insert User Interface (UI) Screen Flow Here</small>
             </div>
